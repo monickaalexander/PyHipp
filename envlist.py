@@ -52,7 +52,7 @@ with lock:
     if pmode == RESET_MODE:
         clist = []
         for i in range(0, sys.argv[2]):
-            x = '{}'.format(sys.argv[1]) + '{}'.format(sys.argv[2])
+            x = '{}'.format(sys.argv[1]) + '{}'.format(i)
             clist.append(x)
         # create a list (named clist) of nevns environments with the 
         # prefix envprefix
@@ -72,6 +72,7 @@ with lock:
             # add code here
             # return env name
             print(env)
+
 
     # save hickle file
     hickle.dump(clist, file_path, mode="w")
