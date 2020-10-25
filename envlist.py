@@ -65,6 +65,7 @@ with lock:
         else:
             # get and remove env from clist
             # add code here
+            #assignming env
             env = clist[0]
             clist.remove(env)
             # return env name
