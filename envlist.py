@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Oct 25 01:20:51 2020
+Created on Sun Oct 25 11:44:07 2020
 
 @author: monic
 """
@@ -45,34 +45,30 @@ else:
 # creates a lock for the file so it can only be accessed one at a time
 lock = FileLock(lock_path, timeout=time_out_secs)
 
-#the number of environments required = sys.argv[2]
-#the prefix to be used = sys.argv[1]
-
 with lock:
     if pmode == RESET_MODE:
+        # create a list (named clist) of nevns environments with the 
+        # prefix envprefix
+        # add code here
         clist = []
         for i in range(0, sys.argv[2]):
             x = '{}'.format(sys.argv[1]) + '{}'.format(i)
             clist.append(x)
-        # create a list (named clist) of nevns environments with the 
-        # prefix envprefix
-        # add code here
     else:
         # load hickle file
         clist = hickle.load(file_path)
 
         if pmode == WRITE_MODE:
-            clist.append(sys.argv[1])
             # append env to the clist
             # add code here
+            clist.append(sys.argv[1])
         else:
-            env = clist[0]
-            clist.remove(env)
             # get and remove env from clist
             # add code here
+            env = clist[0]
+            clist.remove(env)
             # return env name
             print(env)
-
 
     # save hickle file
     hickle.dump(clist, file_path, mode="w")
