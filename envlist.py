@@ -44,8 +44,8 @@ with lock:
         # prefix envprefix
         # add code here
         clist = []
-        for i in range(0, sys.argv[2]):
-            x = '{}'.format(sys.argv[1]) + '{}'.format(i)
+        for i in range(0, int(nenvs):
+            x = '{}'.format(envprefix) + '{}'.format(i)
             clist.append(x)
     else:
         # load hickle file
@@ -54,7 +54,7 @@ with lock:
         if pmode == WRITE_MODE:
             # append env to the clist
             # add code here
-            clist.append(sys.argv[1])
+            clist.append(env)
         else:
             # get and remove env from clist
             # add code here
