@@ -4,7 +4,6 @@ import hickle as hkl
 import os
 import numpy as np
 
-
 class Waveform(DPT.DPObject):
     # Please change the class name according to your needs
     filename = 'waveform.hkl'  # this is the filename that will be saved if it's run with saveLevel=1
